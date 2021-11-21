@@ -28,6 +28,15 @@ venv:
 	$(PYTHON_VERSION) -m venv $(VENV)
 	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
 
+## Update requirements file
+update_reqs:
+	printf "# local package\n-e .\n\n# external requirements\n" > requirements.txt
+	$(PYTHON_INTERPRETER) -m pip list --format=freeze >> requirements.txt
+
+## Update virtual environment
+update_venv:
+	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
+
 ## Install Python Dependencies
 requirements: test_environment
 	$(PYTHON_INTERPRETER) -m pip install -U pip setuptools wheel
