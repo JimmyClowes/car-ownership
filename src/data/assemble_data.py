@@ -24,3 +24,11 @@ if __name__ == '__main__':
     # fetch car ownership per area data
     fetch_data_source('https://data.london.gov.uk/download/licensed-vehicles-numbers-borough/45c47aba-682d-4be4-b62a-42215203c2ad/vehicles-licensed-borough.xls',
                       output_file = '/data/raw/ts_cars_area.xls')
+
+    # fetch population per area data
+    fetch_data_source('https://www.ons.gov.uk/file?uri=%2fpeoplepopulationandcommunity%2fpopulationandmigration%2fpopulationestimates%2fdatasets%2fpopulationestimatesforukenglandandwalesscotlandandnorthernireland%2fmid2020/ukpopestimatesmid2020on2021geography.xls',
+                      output_file = '/data/raw/ts_pop_area.xls')
+
+    # fetch price index time series data
+    fetch_data_source('https://www.ons.gov.uk/generator?format=csv&uri=/economy/inflationandpriceindices/timeseries/d7co/mm23',
+                      '/data/raw/ts_price_index_vehicle_purchase.csv')
