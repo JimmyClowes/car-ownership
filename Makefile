@@ -26,6 +26,7 @@ endif
 venv:
 	rm -rf $(VENV)
 	$(PYTHON_VERSION) -m venv $(VENV)
+	$(PYTHON_INTERPRETER) -m pip install -U pip setuptools wheel
 	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
 
 ## Update requirements file

@@ -213,6 +213,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+.venv-car-ownership
 .env
 .venv
 env/
