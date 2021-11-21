@@ -8,7 +8,9 @@ PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 BUCKET = [OPTIONAL] your-bucket-for-syncing-data (do not include 's3://')
 PROFILE = default
 PROJECT_NAME = car-ownership
-PYTHON_INTERPRETER = python3
+PYTHON_VERSION = python3.7
+VENV = .venv-car-ownership
+PYTHON_INTERPRETER = $(VENV)/bin/python
 
 ifeq (,$(shell which conda))
 HAS_CONDA=False
@@ -19,6 +21,12 @@ endif
 #################################################################################
 # COMMANDS                                                                      #
 #################################################################################
+
+## Make virtual environment
+venv:
+	rm -rf $(VENV)
+	$(PYTHON_VERSION) -m venv $(VENV)
+	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
 
 ## Install Python Dependencies
 requirements: test_environment
