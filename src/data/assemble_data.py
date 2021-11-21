@@ -29,6 +29,6 @@ if __name__ == '__main__':
     fetch_data_source('https://www.ons.gov.uk/file?uri=%2fpeoplepopulationandcommunity%2fpopulationandmigration%2fpopulationestimates%2fdatasets%2fpopulationestimatesforukenglandandwalesscotlandandnorthernireland%2fmid2020/ukpopestimatesmid2020on2021geography.xls',
                       output_file = '/data/raw/ts_pop_area.xls')
 
-    # fetch price index time series data
-    fetch_data_source('https://www.ons.gov.uk/generator?format=csv&uri=/economy/inflationandpriceindices/timeseries/d7co/mm23',
-                      '/data/raw/ts_price_index_vehicle_purchase.csv')
+    # fetch motoring costs price index
+    fetch_data_source('https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/944264/tsgb1307.ods',
+                      '/data/raw/ts_motor_price_indices.ods')
